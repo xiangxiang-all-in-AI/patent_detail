@@ -1,0 +1,51 @@
+export const patentData = {
+  title: '一种含氮杂环化合物的晶型、其制备方法及其应用',
+  applicationNumber: 'CN202310123456.7',
+  status: '实质审查',
+  applicationDate: '2023-02-15',
+  publicationDate: '2023-08-22',
+  ipc: [
+    { code: 'C07D 401/14', name: '含有三个或更多个杂环的杂环化合物' },
+    { code: 'A61K 31/4439', name: '含有吡啶环的药物制剂' },
+    { code: 'A61P 35/00', name: '抗肿瘤药' },
+  ],
+  agency: '北京某某知识产权代理有限公司',
+  applicantAddress: '北京市海淀区清华园1号',
+  abstract: '本发明公开了一种含氮杂环化合物的晶型、其制备方法及其应用。该晶型具有良好的物理化学稳定性，溶解度高，生物利用度好，适用于制备治疗肿瘤等疾病的药物。本发明还提供了该晶型的制备方法，工艺简单，重现性好，适合工业化大生产。',
+  aiSummary: {
+    problem: '现有抗肿瘤药物存在水溶性差、生物利用度低、物理化学性质不稳定等问题，导致制剂困难和临床疗效受限。',
+    effect: '显著提高了化合物的溶解度和溶出速率，口服生物利用度提升约3倍；在高温、高湿和光照条件下保持极高的晶型稳定性。',
+    application: '可直接用于开发新型靶向抗肿瘤口服固体制剂（如片剂、胶囊），特别适用于非小细胞肺癌和乳腺癌的靶向治疗药物开发。',
+  },
+  timeline: [
+    { date: '2023-09-10', event: '进入实质审查阶段' },
+    { date: '2023-08-22', event: '初步审查合格并公开' },
+    { date: '2023-02-15', event: '专利申请' },
+  ],
+  inventors: [
+    { name: '林舒雅', org: '清华大学', role: '第一发明人', patents: 156, expertise: ['半导体器件', 'GaN研究', '射频集成电路'], match: 98 },
+    { name: '王利民', org: '清华大学', role: '共同发明人', patents: 89, expertise: ['微电子', '芯片设计'], match: 85 },
+    { name: '欧阳慕容', org: '北京某某科技有限公司研发中心', role: '共同发明人', patents: 42, expertise: ['晶型药物开发', '药物分析', '制剂工艺优化'], match: 92 },
+  ],
+  applicants: [
+    { name: '清华大学', type: '高校', patents: 12500, expertise: ['信息技术', '材料科学', '生物医药'] },
+    { name: '北京某某科技有限公司', type: '企业', patents: 340, expertise: ['医药研发', '创新药'] },
+    { name: '上海某某医药科技发展集团股份有限公司', type: '企业', patents: 120, expertise: ['靶向药物', '临床研究', '医药中间体合成'] },
+  ],
+  claims: '1. 一种式(I)所示化合物的晶型A，其特征在于，使用Cu-Kα辐射，其X射线粉末衍射图谱在2θ角度为...\n\n2. 根据权利要求1所述的晶型A，其特征在于...\n\n3. 一种制备权利要求1或2所述晶型A的方法...',
+  description: '技术领域\n本发明涉及医药化学领域，具体涉及一种含氮杂环化合物的晶型、其制备方法及其在制备抗肿瘤药物中的应用。\n\n背景技术\n现有技术中，该类化合物虽然具有一定的体外活性，但其水溶性极差，导致动物体内的生物利用度极低，无法满足临床成药的要求。因此，寻找具有优良物理化学性质的晶型是该领域亟待解决的问题。\n\n发明内容\n为了解决上述技术问题，本发明提供了一种式(I)所示化合物的晶型A...',
+  citedPatents: [
+    { id: 'CN109876543A', title: '一种新型激酶抑制剂及其应用' },
+    { id: 'US20210123456A1', title: 'Nitrogen-containing heterocyclic compounds' },
+    { id: 'CN110123456A', title: '取代的吡啶并嘧啶类化合物及其作为抗肿瘤药物的应用' },
+    { id: 'EP3456789A1', title: 'Novel kinase inhibitors for cancer therapy' },
+    { id: 'WO2022098765A1', title: 'Heterocyclic compounds and their pharmaceutical compositions' },
+  ],
+  similarPatents: [
+    { id: 'CN112345678A', title: '取代的嘧啶衍生物及其作为激酶抑制剂的用途', match: 92 },
+    { id: 'CN113456789A', title: '一种吡啶类化合物的盐及其晶型', match: 88 },
+    { id: 'CN114567890A', title: '含氮杂环类化合物的制备方法优化', match: 85 },
+    { id: 'CN115678901A', title: '靶向EGFR突变的抗肿瘤药物组合物', match: 81 },
+    { id: 'CN116789012A', title: '一种高溶解度的杂环化合物晶型B', match: 79 },
+  ],
+}

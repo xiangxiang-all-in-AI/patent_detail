@@ -171,7 +171,7 @@ function closeSub() {
         </button>
 
         <button class="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors hidden sm:block">登录</button>
-        <button class="text-sm font-medium bg-[#0B57D0] text-white px-5 py-2 rounded-full hover:bg-blue-700 hover:scale-105 active:scale-95 transition-all shadow-sm shadow-blue-200 hover:shadow-md hover:shadow-blue-300 hidden sm:block">注册</button>
+        <button class="text-sm font-medium bg-[#0119FF] text-white px-5 py-2 rounded-full hover:bg-[#0014D9] hover:scale-105 active:scale-95 transition-all shadow-sm shadow-blue-200 hover:shadow-md hover:shadow-blue-300 hidden sm:block">注册</button>
       </div>
     </div>
 
@@ -185,7 +185,7 @@ function closeSub() {
           <a href="#" class="block text-gray-500 hover:text-[#0B57D0] font-medium text-sm py-2 transition-colors">活动报名</a>
           <div class="flex gap-3 pt-3 border-t border-gray-200">
             <button class="text-sm font-medium text-gray-500 px-4 py-2">登录</button>
-            <button class="text-sm font-medium bg-[#0B57D0] text-white px-5 py-2 rounded-full">注册</button>
+            <button class="text-sm font-medium bg-[#0119FF] text-white px-5 py-2 rounded-full">注册</button>
           </div>
         </nav>
       </div>

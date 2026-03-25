@@ -62,8 +62,8 @@ function closeSub() {
 </script>
 
 <template>
-  <header class="fixed top-0 left-0 right-0 z-50 glass border-b border-slate-200/50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+  <header class="fixed top-0 left-0 right-0 z-50 h-16 glass border-b border-gray-200/50">
+    <div class="max-w-[1200px] mx-auto px-6 h-full flex items-center justify-between">
       <!-- Left: Logo + Nav -->
       <div class="flex items-center">
         <a href="/" class="flex items-center gap-2 flex-shrink-0" aria-label="转果果首页">
@@ -76,7 +76,7 @@ function closeSub() {
             <div v-if="!item.hasDropdown">
               <a
                 :href="item.href"
-                class="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors duration-300 py-2 px-1"
+                class="text-sm font-medium text-gray-500 hover:text-[#0B57D0] transition-colors duration-300 py-2 px-1"
               >
                 {{ item.label }}
               </a>
@@ -91,12 +91,13 @@ function closeSub() {
             >
               <button
                 class="flex items-center gap-1 text-sm font-medium transition-colors duration-300 py-2 px-1"
-                :class="activeDropdown === item.id ? 'text-blue-600' : 'text-slate-600 hover:text-blue-600'"
+                :class="activeDropdown === item.id ? 'text-[#0B57D0]' : 'text-gray-500 hover:text-[#0B57D0]'"
                 :aria-expanded="activeDropdown === item.id"
               >
                 {{ item.label }}
                 <ChevronDown
-                  class="w-4 h-4 transition-transform duration-300 ease-out"
+                  :size="16"
+                  class="transition-transform duration-300 ease-out"
                   :class="{ 'rotate-180': activeDropdown === item.id }"
                 />
               </button>
@@ -116,11 +117,11 @@ function closeSub() {
                   >
                     <a
                       :href="`/${item.id}/${subItem.label}`"
-                      class="dropdown-item flex items-center justify-between px-4 py-2 text-[13px] text-slate-600 transition-colors duration-200 hover:text-blue-600 hover:bg-slate-50 rounded-md mx-1.5"
+                      class="dropdown-item flex items-center justify-between px-4 py-2 text-[13px] text-gray-500 transition-colors duration-200 hover:text-[#0B57D0] hover:bg-gray-50 rounded-md mx-1.5"
                       :style="{ transitionDelay: activeDropdown === item.id ? `${idx * 20}ms` : '0ms' }"
                     >
                       {{ subItem.label }}
-                      <ChevronRight v-if="subItem.subItems" class="w-3 h-3 text-slate-400" />
+                      <ChevronRight v-if="subItem.subItems" :size="12" class="text-gray-400/60" />
                     </a>
 
                     <!-- Sub dropdown -->
@@ -134,7 +135,7 @@ function closeSub() {
                           v-for="(third, tidx) in subItem.subItems"
                           :key="third"
                           :href="`/${item.id}/${subItem.label}/${third}`"
-                          class="dropdown-item block px-4 py-2 text-[13px] text-slate-600 transition-colors duration-200 hover:text-blue-600 hover:bg-slate-50 rounded-md mx-1.5"
+                          class="dropdown-item block px-4 py-2 text-[13px] text-gray-500 transition-colors duration-200 hover:text-[#0B57D0] hover:bg-gray-50 rounded-md mx-1.5"
                           :style="{ transitionDelay: activeSubDropdown === subItem.label ? `${tidx * 20}ms` : '0ms' }"
                         >
                           {{ third }}
@@ -152,33 +153,39 @@ function closeSub() {
       <!-- Right: Search + Auth -->
       <div class="flex items-center gap-4">
         <div class="relative hidden lg:block search-glow rounded-full transition-all duration-300">
-          <Search class="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 transition-colors" />
-          <input type="text" placeholder="向小果AI提问或搜索..." class="pl-9 pr-12 py-2 bg-slate-100 border-transparent rounded-full text-sm focus:bg-white focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all w-64 focus:w-80 outline-none" />
-          <div class="absolute right-2 top-1/2 -translate-y-1/2 bg-white px-1.5 py-0.5 rounded text-[10px] font-medium text-slate-400 shadow-sm">AI</div>
+          <Search :size="16" class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 transition-colors" />
+          <input
+            type="text"
+            placeholder="向小果AI提问或搜索..."
+            class="pl-9 pr-12 py-2 bg-gray-100 border-transparent rounded-full text-sm focus:bg-white focus:border-[#0B57D0] focus:ring-2 focus:ring-[#0B57D0]/20 transition-all w-64 focus:w-80 outline-none text-gray-900 placeholder-gray-400"
+          />
+          <div class="absolute right-2 top-1/2 -translate-y-1/2 bg-white px-1.5 py-0.5 rounded text-[10px] font-medium text-gray-400 shadow-sm border border-gray-200">AI</div>
         </div>
+
         <!-- Mobile menu button -->
-        <button @click="mobileOpen = !mobileOpen" class="md:hidden p-2 rounded-lg hover:bg-slate-100 transition-colors" aria-label="菜单">
+        <button @click="mobileOpen = !mobileOpen" class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors" aria-label="菜单">
           <Transition name="menu-icon" mode="out-in">
-            <X v-if="mobileOpen" class="w-5 h-5 text-slate-600" />
-            <Menu v-else class="w-5 h-5 text-slate-600" />
+            <X v-if="mobileOpen" :size="20" class="text-gray-500" />
+            <Menu v-else :size="20" class="text-gray-500" />
           </Transition>
         </button>
-        <button class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors hidden sm:block">登录</button>
-        <button class="text-sm font-medium bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-700 hover:scale-105 active:scale-95 transition-all shadow-sm shadow-blue-200 hover:shadow-md hover:shadow-blue-300 hidden sm:block">注册</button>
+
+        <button class="text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors hidden sm:block">登录</button>
+        <button class="text-sm font-medium bg-[#0B57D0] text-white px-5 py-2 rounded-full hover:bg-blue-700 hover:scale-105 active:scale-95 transition-all shadow-sm shadow-blue-200 hover:shadow-md hover:shadow-blue-300 hidden sm:block">注册</button>
       </div>
     </div>
 
     <!-- Mobile menu dropdown -->
     <Transition name="mobile-menu">
-      <div v-if="mobileOpen" class="md:hidden border-t border-slate-100 bg-white/95 backdrop-blur-lg">
-        <nav class="max-w-7xl mx-auto px-4 py-4 space-y-3">
-          <a href="https://pro.imaibj.cn/" class="block text-slate-600 hover:text-blue-600 font-medium text-sm py-2 transition-colors">小果AI</a>
-          <a href="#" class="block text-slate-900 font-medium text-sm py-2">科创库</a>
-          <a href="#" class="block text-slate-600 hover:text-blue-600 font-medium text-sm py-2 transition-colors">揭榜挂帅</a>
-          <a href="#" class="block text-slate-600 hover:text-blue-600 font-medium text-sm py-2 transition-colors">活动报名</a>
-          <div class="flex gap-3 pt-3 border-t border-slate-100">
-            <button class="text-sm font-medium text-slate-600 px-4 py-2">登录</button>
-            <button class="text-sm font-medium bg-blue-600 text-white px-5 py-2 rounded-full">注册</button>
+      <div v-if="mobileOpen" class="md:hidden border-t border-gray-200 bg-white/95 backdrop-blur-lg">
+        <nav class="max-w-[1200px] mx-auto px-6 py-4 space-y-3">
+          <a href="https://pro.imaibj.cn/" class="block text-gray-500 hover:text-[#0B57D0] font-medium text-sm py-2 transition-colors">小果AI</a>
+          <a href="#" class="block text-gray-900 font-medium text-sm py-2">科创库</a>
+          <a href="#" class="block text-gray-500 hover:text-[#0B57D0] font-medium text-sm py-2 transition-colors">揭榜挂帅</a>
+          <a href="#" class="block text-gray-500 hover:text-[#0B57D0] font-medium text-sm py-2 transition-colors">活动报名</a>
+          <div class="flex gap-3 pt-3 border-t border-gray-200">
+            <button class="text-sm font-medium text-gray-500 px-4 py-2">登录</button>
+            <button class="text-sm font-medium bg-[#0B57D0] text-white px-5 py-2 rounded-full">注册</button>
           </div>
         </nav>
       </div>
@@ -187,6 +194,16 @@ function closeSub() {
 </template>
 
 <style scoped>
+.glass {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.search-glow:focus-within {
+  box-shadow: 0 0 0 3px rgba(11, 87, 208, 0.15), 0 0 20px rgba(11, 87, 208, 0.08);
+}
+
 /* Dropdown panel: CSS-only transition */
 .dropdown-panel {
   opacity: 0;
